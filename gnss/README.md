@@ -9,6 +9,7 @@ The GNSS APIs are split into the following groups:
 - `pos`: reading position from a GNSS module.
 - `info`: read other information from a GNSS module.
 - `msg`: exchange your own messages with a GNSS module.
+- `dec`: directly decode messages received from the GNSS module.
 - `mga`: multiple-GNSS assistance: AssistNow and other features that improve time to first fix.
 - `util`: utility functions for use with a GNSS module.
 

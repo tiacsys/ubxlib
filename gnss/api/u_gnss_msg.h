@@ -104,7 +104,8 @@ extern "C" {
  * This callback should be executed as quickly as possible to
  * avoid data loss.  The ONLY GNSS API calls that pCallback may make
  * are uGnssMsgReceiveCallbackRead() / uGnssMsgReceiveCallbackExtract(),
- * no others or you risk getting mutex-locked.
+ * and potentially pUGnssDecAlloc() / uGnssDecFree(), no others or
+ * you risk getting mutex-locked.
  *
  * If you are checking for a specific UBX-format message (i.e. no
  * wild-cards) and a NACK is received for that message then
@@ -343,11 +344,13 @@ int32_t uGnssMsgReceive(uDeviceHandle_t gnssHandle,
  *                               checksum, etc. will be included.
  *                               IMPORTANT: the ONLY GNSS API calls that
  *                               pCallback may make are
- *                               uGnssMsgReceiveCallbackRead() and
- *                               uGnssMsgReceiveCallbackExtract(), no others
- *                               or you risk getting mutex-locked. pCallback
- *                               is run in the context of a task with a stack
- *                               of size #U_GNSS_MSG_RECEIVE_TASK_STACK_SIZE_BYTES;
+ *                               uGnssMsgReceiveCallbackRead(),
+ *                               uGnssMsgReceiveCallbackExtract(), and
+ *                               potentially pUGnssDecAlloc() / uGnssDecFree(),
+ *                               no others or you risk getting mutex-locked.
+ *                               pCallback is run in the context of a task with
+ *                               a stack of size
+ *                               #U_GNSS_MSG_RECEIVE_TASK_STACK_SIZE_BYTES;
  *                               you may call uGnssMsgReceiveStackMinFree()
  *                               just before calling uGnssMsgReceiveStop()
  *                               to check if the remaining stack margin was
