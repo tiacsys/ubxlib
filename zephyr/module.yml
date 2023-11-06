@@ -1,5 +1,6 @@
+name: ubxlib
 build:
-  cmake: port/platform/zephyr/
-  kconfig: port/platform/zephyr/Kconfig
+  cmake-ext: True
+  kconfig-ext: True
   settings:
     dts_root: port/platform/zephyr
