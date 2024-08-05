@@ -76,6 +76,7 @@
 #include "u_port_os.h"
 
 #include <version.h>
+#include <ncs_version.h>
 
 #if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
@@ -168,7 +169,13 @@ static uPortOsThreadInstance_t *pGetNewThreadInstance(size_t stackSizeBytes)
             // the need for K_KERNEL_STACK_LEN()
 #if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,7,0)
             stackAllocSize = K_KERNEL_STACK_LEN(stackSizeBytes);
+#elif defined(NCSVERSION)
+#if NCS_VERSION_NUMBER >= 0x20700 // v2.7.0
+            stackAllocSize = K_KERNEL_STACK_LEN(stackSizeBytes);
 #else
+            stackAllocSize = Z_KERNEL_STACK_LEN(stackSizeBytes);
+#endif // NCS_VERSION_NUMBER
+#else // KERNEL_VERSION_NUMBER
             stackAllocSize = Z_KERNEL_STACK_LEN(stackSizeBytes);
 #endif
             threadPtr->pStack = k_aligned_alloc(Z_KERNEL_STACK_OBJ_ALIGN, stackAllocSize);
