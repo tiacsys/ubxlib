@@ -84,6 +84,9 @@ zephyr_include_directories(
     ${ZEPHYR_BASE}/include
 )
 
+# Disable ubxlib logs
+list(APPEND UBXLIB_COMPILE_OPTIONS "-DU_CFG_ENABLE_LOGGING=0")
+
 # Add any compile options that came out of ubxlib.cmake
 target_compile_options(app PRIVATE ${UBXLIB_COMPILE_OPTIONS})
 
