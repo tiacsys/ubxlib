@@ -77,15 +77,8 @@
 // Bring in all of the ubxlib public header files
 #include "ubxlib.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
 #include <zephyr/net/socket.h>
-#else
-#include <kernel.h>
-#include <net/socket.h>
-#endif
 
 #if defined(CONFIG_NET_PPP) && defined(CONFIG_NET_TCP) &&    \
     defined(CONFIG_NET_SOCKETS) && defined(U_CFG_PPP_ENABLE)

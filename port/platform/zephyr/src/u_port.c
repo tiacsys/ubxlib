@@ -43,15 +43,9 @@
 #include "u_port_ppp_private.h"
 #include "u_port_private.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
-#else
-#include <kernel.h>
-#include <device.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_NUMBER
 
 /* ----------------------------------------------------------------
  * COMPILE-TIME MACROS

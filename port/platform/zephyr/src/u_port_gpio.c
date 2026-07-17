@@ -31,17 +31,10 @@
 #include "u_port_os.h"      // Needed by u_port_private.h
 #include "u_port_gpio.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
-#else
-#include <kernel.h>
-#include <device.h>
-#include <drivers/gpio.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_MAJOR
 
 #include "u_port_private.h"  // Down here because it needs to know about the Zephyr device tree
 

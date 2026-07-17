@@ -78,12 +78,7 @@
 #include "u_test_util_resource_check.h"
 
 #ifdef CONFIG_IRQ_OFFLOAD // To test semaphore from ISR in zephyr
-#include <version.h>
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
-#include <zephyr/irq_offload.h>
-#else
-#include <irq_offload.h>
-#endif
+# include <zephyr/irq_offload.h>
 #endif
 
 /* ----------------------------------------------------------------

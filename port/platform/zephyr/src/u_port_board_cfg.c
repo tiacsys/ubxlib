@@ -65,15 +65,8 @@
 #include "u_port_debug.h"
 #include "u_port_board_cfg.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
-# include <zephyr/kernel.h>
-# include <zephyr/device.h>
-#else
-# include <kernel.h>
-# include <device.h>
-#endif
+#include <zephyr/kernel.h>
+#include <zephyr/device.h>
 
 /* ----------------------------------------------------------------
  * COMPILE-TIME MACROS

@@ -18,13 +18,7 @@
  * @brief Thread dumper for Zephyr.
  */
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
-#else
-#include <kernel.h>
-#endif
 
 /* ----------------------------------------------------------------
  * COMPILE-TIME MACROS

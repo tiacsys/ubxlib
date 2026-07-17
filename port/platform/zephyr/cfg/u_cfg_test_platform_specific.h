@@ -28,12 +28,9 @@
  * for the module is likely different to that from the MCU: check the
  * data sheet for the module to determine the mapping.
  */
-#include <version.h> // For KERNEL_VERSION_MAJOR
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/devicetree.h>
-#else
-#include <devicetree.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_MAJOR
+
 #include "u_runner.h"
 #include "u_port_clib_platform_specific.h" // For rand
 

@@ -60,23 +60,15 @@
 #include "u_port_ppp.h"
 #include "u_port_debug.h"
 
-#include <version.h>
-
 #ifdef CONFIG_NET_PPP
-# if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
-#  include <zephyr/kernel.h>
-#  include <zephyr/device.h>
-#  include <zephyr/net/net_if.h>
-#  include <zephyr/net/net_mgmt.h>
-#  include <zephyr/drivers/uart.h>
-# else
-#  include <kernel.h>
-#  include <device.h>
-#  include <net/net_if.h>
-#  include <net/net_mgmt.h>
-#  include <drivers/uart.h>
-# endif
+# include <zephyr/kernel.h>
+# include <zephyr/device.h>
+# include <zephyr/net/net_if.h>
+# include <zephyr/net/net_mgmt.h>
+# include <zephyr/drivers/uart.h>
 #endif
+
+#include <zephyr/version.h> // For KERNEL_VERSION_NUMBER
 
 /* ----------------------------------------------------------------
  * COMPILE-TIME MACROS

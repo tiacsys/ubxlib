@@ -42,13 +42,8 @@
 #include "u_port_debug.h"
 #include "u_port_os.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
-#else
-#include <kernel.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_NUMBER
 
 #ifdef CONFIG_ARCH_POSIX
 #include "posix_board_if.h"

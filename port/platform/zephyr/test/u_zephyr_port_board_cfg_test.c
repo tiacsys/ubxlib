@@ -71,15 +71,8 @@
 
 #include "u_test_util_resource_check.h"
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
-# include <zephyr/kernel.h>
-# include <zephyr/device.h>
-#else
-# include <kernel.h>
-# include <device.h>
-#endif
+#include <zephyr/kernel.h>
+#include <zephyr/device.h>
 
 #if DT_HAS_COMPAT_STATUS_OKAY(u_blox_ubxlib_device_cellular) ||    \
     DT_HAS_COMPAT_STATUS_OKAY(u_blox_ubxlib_device_gnss) ||        \

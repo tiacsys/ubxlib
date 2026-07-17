@@ -74,17 +74,9 @@
 #include "u_cell_net.h"     // Required by u_cell_private.h
 #include "u_cell_private.h" // So that we can get at some innards
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/kernel.h>
 #include <zephyr/net/socket.h>
 #include <zephyr/posix/fcntl.h>
-#else
-#include <kernel.h>
-#include <net/socket.h>
-#include <posix/fcntl.h>
-#endif
 
 #if defined(CONFIG_NET_PPP) && defined(CONFIG_NET_TCP) &&    \
     defined(CONFIG_NET_SOCKETS) && defined(U_CFG_PPP_ENABLE)

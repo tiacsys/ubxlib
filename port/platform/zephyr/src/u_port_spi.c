@@ -20,23 +20,13 @@
  * @brief Implementation of the port SPI API for the Zephyr platform.
  */
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/types.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/spi.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/devicetree/spi.h>
-#else
-#include <zephyr/types.h>
-#include <kernel.h>
-#include <device.h>
-#include <drivers/spi.h>
-#include <drivers/gpio.h>
-#include <devicetree/spi.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_MAJOR
 
 #include <soc.h>
 

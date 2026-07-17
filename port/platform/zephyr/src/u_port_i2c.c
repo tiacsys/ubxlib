@@ -18,19 +18,11 @@
  * @brief Implementation of the port I2C API for the Zephyr platform.
  */
 
-#include <version.h>
-
-#if KERNEL_VERSION_NUMBER >= ZEPHYR_VERSION(3,1,0)
 #include <zephyr/types.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
-#else
-#include <zephyr/types.h>
-#include <kernel.h>
-#include <device.h>
-#include <drivers/i2c.h>
-#endif
+#include <zephyr/version.h> // For KERNEL_VERSION_MAJOR
 
 #include <soc.h>
 
