@@ -296,7 +296,7 @@ static int32_t setSpiConfig(int32_t spi, uPortSpiCfg_t *pSpiCfg,
 {
     int32_t errorCode = (int32_t) U_ERROR_COMMON_SUCCESS;
     int32_t offsetDuration;
-    uint16_t operation = SPI_OP_MODE_MASTER;
+    uint16_t operation = SPI_OP_MODE_CONTROLLER;
 #if KERNEL_VERSION_MAJOR >= 3
     const struct device *pGpioPort = NULL;
     gpio_flags_t gpioFlags = GPIO_OUTPUT;
